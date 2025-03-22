@@ -125,3 +125,5 @@ C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\bin\Debug\net8.0\StoreApp.Data.pdb
 C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\obj\Debug\net8.0\StoreApp.Web.csproj.AssemblyReference.cache
 C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\obj\Debug\net8.0\StoreApp.Web.sourcelink.json
 C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\obj\Debug\net8.0\StoreApp.Web.csproj.CopyComplete
+C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\bin\Debug\net8.0\libman.json
+C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\bin\Debug\net8.0\StoreApp.Web.staticwebassets.runtime.json
