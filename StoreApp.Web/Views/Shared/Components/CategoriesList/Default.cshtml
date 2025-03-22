@@ -1,10 +1,11 @@
 @model IEnumerable<CategoryViewModel>
 
 <div class="d-grid gap-2">
-    <a class="btn btn-outline-secondary" asp-action="Index" asp-controller="Home">Anasayfa</a>
+    <a class="btn @(ViewBag.SelectedCategory == null ? "btn-secondary" : "btn-outline-secondary")" href="/products">Anasayfa</a>
 
     @foreach(var cat in Model)
     {
-        <a class="btn btn-outline-secondary" asp-action="Index" asp-controller="Home">@cat.Name</a>
+        <a class="btn @(ViewBag.SelectedCategory == cat.Url ? "btn-secondary" : "btn-outline-secondary")" asp-action="Index" asp-controller="Home" asp-route-category="@cat.Url"
+         >@cat.Name</a>
     }
 </div>
