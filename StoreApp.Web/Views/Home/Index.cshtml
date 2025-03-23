@@ -31,12 +31,15 @@
             <a href="/?page=@i">@i</a>
         } -->
 
-        <div 
+        @if(Model.PageInfo.TotalPages > 1)
+        {
+            <div 
             page-model="@Model.PageInfo" 
             page-action="Index"
             page-class="btn"
             page-class-link="btn-outline-secondary"
             page-class-active="btn-secondary"
             class="btn-group m-1"></div>
+        }
     </div>
 </div>
