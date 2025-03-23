@@ -23,7 +23,7 @@ public class HomeController : Controller
         return View(new ProductListViewModel {
             Products = _storeRepository.GetProductsByCategory(category, page, pageSize)
                                     .Select(product => _mapper.Map<ProductViewModel>(product)),
-            PageInfo = new PageInfo {
+            PageInfo = new PageInfo { 
                 ItemsPerPage = pageSize,
                 CurrentPage = page,
                 TotalItems = _storeRepository.GetProductCount(category)
