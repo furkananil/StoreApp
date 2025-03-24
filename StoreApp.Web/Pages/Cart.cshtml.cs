@@ -10,15 +10,15 @@ namespace StoreApp.Web.Pages
     {
         private IStoreRepository _storeRepository;
 
-        public CartModel(IStoreRepository storeRepository)
+        public CartModel(IStoreRepository storeRepository, Cart cartService)
         {
             _storeRepository = storeRepository;
+            Cart = cartService;
         }
 
         public Cart? Cart { get; set; }
         public void OnGet()
         {
-            Cart = HttpContext.Session.GetJson<Cart>("Cart") ?? new Cart();
         }
 
         public IActionResult OnPost(int Id)
@@ -27,7 +27,6 @@ namespace StoreApp.Web.Pages
             
             if(product != null)
             {
-                Cart = HttpContext.Session.GetJson<Cart>("Cart") ?? new Cart();
                 Cart.AddItem(product, 1);
                 HttpContext.Session.SetJson("Cart", Cart);
             }
@@ -35,13 +34,7 @@ namespace StoreApp.Web.Pages
         }
         public IActionResult OnPostRemove(int Id)
         {
-            Cart = HttpContext.Session.GetJson<Cart>("Cart") ?? new Cart();
-
-            var product = Cart.Items.First(p => p.Product.Id == Id).Product;
-
-            Cart?.RemoveItem(product);
-            
-            HttpContext.Session.SetJson("Cart", Cart);
+            Cart?.RemoveItem(Cart.Items.First(p => p.Product.Id == Id).Product);
             return RedirectToPage("/cart");
         }
     }
