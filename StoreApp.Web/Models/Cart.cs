@@ -15,7 +15,7 @@ public class Cart
         {
             Items.Add(new CartItem { Product = product, Quantity = quantity });
         }
-        else
+        else 
             item.Quantity += quantity;
 
     }
