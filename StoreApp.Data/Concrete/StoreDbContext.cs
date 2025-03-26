@@ -1,5 +1,6 @@
 using System.Net.Http.Headers;
 using Microsoft.EntityFrameworkCore;
+using StoreApp.Data.Concrete;
 
 namespace StoreApp.Data.Conrete;
 
@@ -11,6 +12,7 @@ public class StoreDbContext : DbContext
 
     public DbSet<Product> Products => Set<Product>();
     public DbSet<Category> Categories => Set<Category>();
+    public DbSet<Order> Orders => Set<Order>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
