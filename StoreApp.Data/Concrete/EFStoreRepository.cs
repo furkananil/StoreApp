@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using StoreApp.Data.Abstract;
 
-namespace StoreApp.Data.Conrete;
+namespace StoreApp.Data.Concrete;
 
 public class EFStoreRepository : IStoreRepository
 {

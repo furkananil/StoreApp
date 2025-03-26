@@ -1,5 +1,5 @@
 using System;
-using StoreApp.Data.Conrete;
+using StoreApp.Data.Concrete;
 
 namespace StoreApp.Web.Models;
 

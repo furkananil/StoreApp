@@ -1,6 +1,6 @@
 using System;
 using System.Text.Json.Serialization;
-using StoreApp.Data.Conrete;
+using StoreApp.Data.Concrete;
 using StoreApp.Web.Helpers;
 
 namespace StoreApp.Web.Models;

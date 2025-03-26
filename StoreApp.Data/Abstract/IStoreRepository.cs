@@ -1,4 +1,4 @@
-using StoreApp.Data.Conrete;
+using StoreApp.Data.Concrete;
 
 namespace StoreApp.Data.Abstract;
 

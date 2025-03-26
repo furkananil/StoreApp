@@ -3,7 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using StoreApp.Data.Conrete;
+using StoreApp.Data.Concrete;
 
 #nullable disable
 
@@ -16,6 +16,66 @@ namespace StoreApp.Web.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
+
+            modelBuilder.Entity("StoreApp.Data.Concrete.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Url")
+                        .IsUnique();
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Telefon",
+                            Url = "telefon"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Bilgisayar",
+                            Url = "bilgisayar"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Elektronik",
+                            Url = "elektronik"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Beyaz Esya",
+                            Url = "beyaz-esya"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Moda",
+                            Url = "moda"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Kitap",
+                            Url = "kitap"
+                        });
+                });
 
             modelBuilder.Entity("StoreApp.Data.Concrete.Order", b =>
                 {
@@ -78,67 +138,7 @@ namespace StoreApp.Web.Migrations
                     b.ToTable("OrderItem");
                 });
 
-            modelBuilder.Entity("StoreApp.Data.Conrete.Category", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Url")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Url")
-                        .IsUnique();
-
-                    b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Telefon",
-                            Url = "telefon"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Bilgisayar",
-                            Url = "bilgisayar"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Elektronik",
-                            Url = "elektronik"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Beyaz Esya",
-                            Url = "beyaz-esya"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Moda",
-                            Url = "moda"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Kitap",
-                            Url = "kitap"
-                        });
-                });
-
-            modelBuilder.Entity("StoreApp.Data.Conrete.Product", b =>
+            modelBuilder.Entity("StoreApp.Data.Concrete.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -204,7 +204,7 @@ namespace StoreApp.Web.Migrations
                         });
                 });
 
-            modelBuilder.Entity("StoreApp.Data.Conrete.ProductCategory", b =>
+            modelBuilder.Entity("StoreApp.Data.Concrete.ProductCategory", b =>
                 {
                     b.Property<int>("CategoryId")
                         .HasColumnType("INTEGER");
@@ -264,7 +264,7 @@ namespace StoreApp.Web.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("StoreApp.Data.Conrete.Product", "Product")
+                    b.HasOne("StoreApp.Data.Concrete.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -275,15 +275,15 @@ namespace StoreApp.Web.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("StoreApp.Data.Conrete.ProductCategory", b =>
+            modelBuilder.Entity("StoreApp.Data.Concrete.ProductCategory", b =>
                 {
-                    b.HasOne("StoreApp.Data.Conrete.Category", null)
+                    b.HasOne("StoreApp.Data.Concrete.Category", null)
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("StoreApp.Data.Conrete.Product", null)
+                    b.HasOne("StoreApp.Data.Concrete.Product", null)
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)

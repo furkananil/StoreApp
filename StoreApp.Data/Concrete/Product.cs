@@ -1,4 +1,4 @@
-namespace StoreApp.Data.Conrete;
+namespace StoreApp.Data.Concrete;
 
 public class Product
 {

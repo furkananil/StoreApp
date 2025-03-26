@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StoreApp.Data.Abstract;
-using StoreApp.Data.Conrete;
+using StoreApp.Data.Concrete;
 using StoreApp.Web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +15,7 @@ builder.Services.AddDbContext<StoreDbContext>(options => {
 });
 
 builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
+builder.Services.AddScoped<IOrderRepository, EfOrderRepository>();
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();

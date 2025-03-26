@@ -1,5 +1,5 @@
 using System;
-using StoreApp.Data.Conrete;
+using StoreApp.Data.Concrete;
 
 namespace StoreApp.Data.Concrete;
 
@@ -19,9 +19,9 @@ public class OrderItem
 {
     public int Id { get; set; }
     public int OrderId { get; set; }
-    public Order Order { get; set; } = new();
+    public Order Order { get; set; } = null!;
     public int ProductId { get; set; }
-    public Product Product { get; set; } = new();
+    public Product Product { get; set; } = null!; 
     public double Price { get; set; }
     public int Quantity { get; set; }
 }

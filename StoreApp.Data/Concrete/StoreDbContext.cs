@@ -2,7 +2,7 @@ using System.Net.Http.Headers;
 using Microsoft.EntityFrameworkCore;
 using StoreApp.Data.Concrete;
 
-namespace StoreApp.Data.Conrete;
+namespace StoreApp.Data.Concrete;
 
 public class StoreDbContext : DbContext
 {
