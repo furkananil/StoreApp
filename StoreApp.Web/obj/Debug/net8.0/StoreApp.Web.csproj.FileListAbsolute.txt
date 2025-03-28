@@ -129,3 +129,5 @@ C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\bin\Debug\net8.0\libman.json
 C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\bin\Debug\net8.0\StoreApp.Web.staticwebassets.runtime.json
 C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\bin\Debug\net8.0\Iyzipay.dll
+C:\Users\LENOVO\Desktop\StoreApp\StoreApp.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
